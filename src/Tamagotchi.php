@@ -10,10 +10,10 @@ class Tamagotchi
     function __construct($name, $food, $love, $sleep, $amt_sleep)
     {
         $this->name = $name;
-        $this->food = 1;
-        $this->love = 1;
-        $this->sleep = false;
-        $this->amt_sleep = 1;
+        $this->food = $food;
+        $this->love = $love;
+        $this->sleep = $sleep;
+        $this->amt_sleep = $amt_sleep;
     }
 
     function getName()
@@ -71,12 +71,27 @@ class Tamagotchi
         $this->sleep = false;
     }
 
+    function save()  // pushes each new tamagotchi to array; saves in $_SESSION variable 'saved_tamagotchis'
+    {
+        array_push($_SESSION['saved_tamagotchis'], $this);
+    }
+
     function isDead()
     {
         if (($this->getFood() == 0) || ($this->getLove() == 0) || ($this->getAmtSleep() == 0))
         {
             return "Your Tamagotchi is dead!";
         }
+    }
+
+    static function getAll()  // retrieves saved_tamagotchis from $_SESSION variable
+    {
+        return $_SESSION['saved_tamagotchis'];
+    }
+
+    static function deleteAll()  // deletes saved_tamagotchis array
+    {
+        $_SESSION['saved_tamagotchis'] = array();
     }
 
 

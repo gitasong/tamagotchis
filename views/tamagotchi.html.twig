@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Let's Play With Tamagotchis!</title>
+</head>
+<body>
+    <h1>Let's Play With Tamagotchis!</h1>
+
+    <!-- {*% if tasks is not empty %}
+        <p>Here are all your tasks:</p>
+        <ul>
+            {*% for task in tasks %*}  <!-- tasks variable assigned to result of retrieving tasks array from $_SESSION variable -->
+                <!-- <li>{*{ task.getDescription }*}</li>
+            {*% endfor %*}
+        </ul>
+    {*% endif %*} -->
+
+    <form action='/add_tamagotchi' method='post'>
+        <label for='name'>Name your Tamagotchi: </label>
+        <input id='name' name='name' type='text'>
+
+        <button type='submit'>Add task</button>
+    </form>
+
+    <!-- <form action='/delete_tasks' method='post'>
+        <button type='submit'>Clear</button>
+    </form> -->
+</body>
+</html>
