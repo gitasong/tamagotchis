@@ -1,11 +1,11 @@
 <?php
     date_default_timezone_set('America/Los_Angeles');
     require_once __DIR__."/../vendor/autoload.php";
-    require_once __DIR__."/../src/Task.php";
+    require_once __DIR__."/../src/Tamagotchi.php";
 
     session_start();
-    if (empty($_SESSION['list_of_tasks'])) {
-        $_SESSION['list_of_tasks'] = array();
+    if (empty($_SESSION['saved_tamagotchis'])) {
+        $_SESSION['saved_tamagotchis'] = array();
     }
 
     $app = new Silex\Application();
