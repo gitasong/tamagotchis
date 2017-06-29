@@ -58,7 +58,7 @@ class Tamagotchi
 
     function setSleep()
     {
-        $this->sleep = true;
+        $this->sleep = 1;
     }
 
     function setAmtSleep()
@@ -68,7 +68,7 @@ class Tamagotchi
 
     function wake()
     {
-        $this->sleep = false;
+        $this->sleep = 0;
     }
 
     function save()  // pushes each new tamagotchi to array; saves in $_SESSION variable 'saved_tamagotchis'

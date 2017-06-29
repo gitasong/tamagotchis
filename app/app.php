@@ -19,7 +19,7 @@
     });
 
     $app->post("/add_tamagotchi", function() use ($app) {
-        $new_tamagotchi = new Tamagotchi($_POST['name'], 1, 1, false, 1);  // creates new Tamagotchi w/name from form; other values from initial default values
+        $new_tamagotchi = new Tamagotchi($_POST['name'], 1, 1, 0, 1);  // creates new Tamagotchi w/name from form; other values from initial default values
         $new_tamagotchi->save();  // saves new task in $_SESSION variable
         return $app['twig']->render('view_tamagotchi.html.twig', array('newtamagotchi' => $new_tamagotchi));  // renders 'You've created a Tamagotchi!' template w/'newtamagotchi' as twig template variable
     });

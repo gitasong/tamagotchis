@@ -7,7 +7,11 @@
     <p>Name: {{ newtamagotchi.getName }}</p>
     <p>Amount of Food: {{ newtamagotchi.getFood }}</p>
     <p>Amount of Love: {{ newtamagotchi.getLove }}</p>
-    <p>Sleeping? {{ newtamagotchi.getSleep }}</p>
+    {% if newtamagotchi.getSleep == 0 %}
+        <p>Sleeping? No</p>
+    {% elseif newtamagotchi.getSleep == 1 %}
+        <p>Sleeping? Yes</p>
+    {% endif %}
     <p>Amount of Sleep: {{ newtamagotchi.getAmtSleep }}</p>
     <p><a href='/'>View your list of things to do.</a></p>
 </body>
