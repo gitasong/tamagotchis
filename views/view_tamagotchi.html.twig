@@ -7,6 +7,9 @@
     <h1> {{ message }}</h1>
     <p>Name: {{ newtamagotchi.getName }}</p>
     <p>Amount of Food: {{ newtamagotchi.getFood }}</p>
+    <form action="/feed" method="post">
+        <button type="submit" id="feed">Feed Tamagotchi</button>
+    </form>
     <p>Amount of Love: {{ newtamagotchi.getLove }}</p>
     {% if newtamagotchi.getSleep == 0 %}
         <p>Sleeping? No</p>

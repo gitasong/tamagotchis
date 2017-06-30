@@ -48,7 +48,8 @@ class Tamagotchi
 
     function setFood()
     {
-        $this->food = $food++;
+        $this->food ++;
+        return "You fed your Tamagotchi!";
     }
 
     function setLove()
