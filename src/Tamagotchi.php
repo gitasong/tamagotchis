@@ -59,6 +59,8 @@ class Tamagotchi
     function setSleep()
     {
         $this->sleep = 1;
+        $this->amt_sleep ++;
+        return "Your Tamagotchi is asleep!";
     }
 
     function setAmtSleep()
