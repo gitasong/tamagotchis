@@ -71,6 +71,7 @@ class Tamagotchi
     function wake()
     {
         $this->sleep = 0;
+        return "Your Tamagotchi is awake!";
     }
 
     function save()  // pushes each new tamagotchi to array; saves in $_SESSION variable 'saved_tamagotchis'

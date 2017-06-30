@@ -27,10 +27,17 @@
 
     $app->post("/sleep", function() use ($app) {
         $saved_tamagotchis = Tamagotchi::getAll();
-        echo "Before sleep: " . var_dump($saved_tamagotchis);
+        // echo "Before sleep: " . var_dump($saved_tamagotchis);
         $your_tamagotchi = $saved_tamagotchis[0];
         $message = $your_tamagotchi->setSleep();
-        echo "After sleep: " . var_dump($your_tamagotchi);
+        // echo "After sleep: " . var_dump($your_tamagotchi);
+        return $app['twig']->render('view_tamagotchi.html.twig', array('newtamagotchi' => $your_tamagotchi, 'message' => $message));
+    });
+
+    $app->post("/wake", function() use ($app) {
+        $saved_tamagotchis = Tamagotchi::getAll();
+        $your_tamagotchi = $saved_tamagotchis[0];
+        $message = $your_tamagotchi->wake();
         return $app['twig']->render('view_tamagotchi.html.twig', array('newtamagotchi' => $your_tamagotchi, 'message' => $message));
     });
 
