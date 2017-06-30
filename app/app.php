@@ -48,6 +48,13 @@
         return $app['twig']->render('view_tamagotchi.html.twig', array('newtamagotchi' => $your_tamagotchi, 'message' => $message));
     });
 
+    $app->post("/play", function() use ($app) {
+        $saved_tamagotchis = Tamagotchi::getAll();
+        $your_tamagotchi = $saved_tamagotchis[0];
+        $message = $your_tamagotchi->setPlay();
+        return $app['twig']->render('view_tamagotchi.html.twig', array('newtamagotchi' => $your_tamagotchi, 'message' => $message));
+    });
+
 
     return $app;
 ?>

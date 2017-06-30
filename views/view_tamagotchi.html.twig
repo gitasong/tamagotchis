@@ -10,7 +10,10 @@
     <form action="/feed" method="post">
         <button type="submit" id="feed">Feed Tamagotchi</button>
     </form>
-    <p>Amount of Love: {{ newtamagotchi.getLove }}</p>
+    <p>Amount of Play: {{ newtamagotchi.getPlay }}</p>
+    <form action="/play" method="post">
+        <button type="submit" id="play">Play With Tamagotchi</button>
+    </form>
     {% if newtamagotchi.getSleep == 0 %}
         <p>Sleeping? No</p>
     {% elseif newtamagotchi.getSleep == 1 %}

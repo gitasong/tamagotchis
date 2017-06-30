@@ -3,15 +3,15 @@ class Tamagotchi
 {
     private $name;
     private $food;  // number - increment
-    private $love;  // love - increment
+    private $play;  // play - increment
     private $sleep;  // Boolean - true or false
     private $amt_sleep;  // amount of sleep - increment
 
-    function __construct($name, $food, $love, $sleep, $amt_sleep)
+    function __construct($name, $food, $play, $sleep, $amt_sleep)
     {
         $this->name = $name;
         $this->food = $food;
-        $this->love = $love;
+        $this->play = $play;
         $this->sleep = $sleep;
         $this->amt_sleep = $amt_sleep;
     }
@@ -26,9 +26,9 @@ class Tamagotchi
         return $this->food;
     }
 
-    function getLove()
+    function getPlay()
     {
-        return $this->love;
+        return $this->play;
     }
 
     function getSleep()
@@ -52,9 +52,10 @@ class Tamagotchi
         return "You fed your Tamagotchi!";
     }
 
-    function setLove()
+    function setPlay()
     {
-        $this->love = $love++;
+        $this->play ++;
+        return "You played with your Tamagotchi!";
     }
 
     function setSleep()
@@ -82,7 +83,7 @@ class Tamagotchi
 
     function isDead()
     {
-        if (($this->getFood() == 0) || ($this->getLove() == 0) || ($this->getAmtSleep() == 0))
+        if (($this->getFood() == 0) || ($this->getPlay() == 0) || ($this->getAmtSleep() == 0))
         {
             return "Your Tamagotchi is dead!";
         }
